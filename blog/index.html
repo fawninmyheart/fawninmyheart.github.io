@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fawninmyheart.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Hexo是一个快速、简洁且高效的博客框架。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo搭建个人博客">
+<meta property="og:url" content="https://fawninmyheart.github.io/blog/index.html">
+<meta property="og:site_name" content="You are my sunshine&lt;br&gt;being with you is like walking on a clear morning">
+<meta property="og:description" content="Hexo是一个快速、简洁且高效的博客框架。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fawninmyheart.github.io/blog/github_pages_name.png">
+<meta property="og:image" content="https://fawninmyheart.github.io/blog/github_pages_run.png">
+<meta property="og:image" content="https://fawninmyheart.github.io/blog/CNAME_resolution.png">
+<meta property="og:image" content="https://fawninmyheart.github.io/blog/resolution.png">
+<meta property="og:image" content="https://fawninmyheart.github.io/blog/CNAME.png">
+<meta property="article:published_time" content="2024-07-18T01:33:46.000Z">
+<meta property="article:modified_time" content="2024-08-08T12:33:22.146Z">
+<meta property="article:author" content="Shen Hua">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fawninmyheart.github.io/blog/github_pages_name.png">
+
+<link rel="canonical" href="https://fawninmyheart.github.io/blog/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Hexo搭建个人博客 | You are my sunshine, being with you is like walking on a clear morning</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="You are my sunshine<br>being with you is like walking on a clear morning" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">You are my sunshine<br>being with you is like walking on a clear morning</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-sketch">
+
+    <a href="/sketch/" rel="section"><i class="fa fa-pen fa-fw"></i>素描</a>
+
+  </li>
+        <li class="menu-item menu-item-travel">
+
+    <a href="/travel/" rel="section"><i class="fa fa-mountain fa-fw"></i>旅行</a>
+
+  </li>
+        <li class="menu-item menu-item-essay">
+
+    <a href="/essay/" rel="section"><i class="fa fa-comment fa-fw"></i>杂记</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://fawninmyheart.github.io/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/xiaohu.jpg">
+      <meta itemprop="name" content="Shen Hua">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="You are my sunshine<br>being with you is like walking on a clear morning">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo搭建个人博客
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-07-18 09:33:46" itemprop="dateCreated datePublished" datetime="2024-07-18T09:33:46+08:00">2024-07-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-08-08 20:33:22" itemprop="dateModified" datetime="2024-08-08T20:33:22+08:00">2024-08-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a>是一个快速、简洁且高效的博客框架。</p>
+<span id="more"></span>
+
+<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title=" Hexo安装 "></a><font face="Lato" size=5> Hexo安装 </font></h3><h4 id="本地linux配置"><a href="#本地linux配置" class="headerlink" title=" 本地linux配置 "></a><font face="Lato" size=4> 本地linux配置 </font></h4><h5 id="安装依赖"><a href="#安装依赖" class="headerlink" title=" 安装依赖 "></a><font face="Lato" size=3> 安装依赖 </font></h5><p>Hexo的运行依赖于<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/package-manager">Node.js</a>和<a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># installs nvm (Node Version Manager)</span></span><br><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash</span><br><span class="line"><span class="comment"># download and install Node.js (you may need to restart the terminal)</span></span><br><span class="line">nvm install 20</span><br><span class="line"><span class="comment"># verifies the right Node.js version is in the environment</span></span><br><span class="line">node -v <span class="comment"># should print `v20.15.1`</span></span><br><span class="line"><span class="comment"># verifies the right NPM version is in the environment</span></span><br><span class="line">npm -v <span class="comment"># should print `10.7.0`</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Hexo安装-1"><a href="#Hexo安装-1" class="headerlink" title=" Hexo安装 "></a><font face="Lato" size=3> Hexo安装 </font></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="博客配置"><a href="#博客配置" class="headerlink" title=" 博客配置 "></a><font face="Lato" size=5> 博客配置 </font></h3><h4 id="初始化博客"><a href="#初始化博客" class="headerlink" title=" 初始化博客 "></a><font face="Lato" size=4> 初始化博客 </font></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h4 id="菜单栏图标"><a href="#菜单栏图标" class="headerlink" title=" 菜单栏图标 "></a><font face="Lato" size=4> 菜单栏图标 </font></h4><p>可以调用<a target="_blank" rel="noopener" href="https://fontawesome.com/search?p=4&o=r&m=free">Font Awesome</a>中的图标。在主题的配置文件中，找到menu模块，在“||”后引用图标。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || fa fa-home</span><br><span class="line">  sketch: sketch/ || fa fa-pen</span><br><span class="line">  travel: travel/ || fa fa-archive</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="发布博客"><a href="#发布博客" class="headerlink" title=" 发布博客 "></a><font face="Lato" size=5> 发布博客 </font></h3><p>上面我们已经在本地建立了自己的博客环境（即使用“hexo init”初始化了的那个文件夹），下面就可以开始编辑我们的博客了。</p>
+<blockquote>
+  <font face="Lato" size=3>
+    <p>
+      <i>这里建议大家不要把大文件和原始分辨率的图片放到这个文件夹里面。因为我们通常会使用git来管理这个文件夹，由于git会保存这个文件夹的所有历史记录，所以我们放入这个文件夹的大文件会被记录到“.git”文件夹中，即使之后将这些大文件删除了，也不会影响“.git”中备份的文件，导致“.git”文件夹体积过于庞大，不利于我们在远程仓库中管理这个文件夹。对于我们需要在文章中引用的图片，我们建议使用图床服务进行处理，后文中我们会介绍如何使用Github配置一个我们自己的图床。</i>
+    </p>
+  </font>
+</blockquote>
+
+<hr>
+<h3 id="Hexo部署"><a href="#Hexo部署" class="headerlink" title=" Hexo部署 "></a><font face="Lato" size=5> Hexo部署 </font></h3><p>将Hexo静态网站部署到公共服务器</p>
+<h4 id="方法一、Github-Pages-部署"><a href="#方法一、Github-Pages-部署" class="headerlink" title=" 方法一、Github Pages 部署 "></a><font face="Lato" size=4> 方法一、Github Pages 部署 </font></h4><p>
+  <a target="_blank" rel="noopener" href="https://pages.github.com/">Github Pages</a>是Github提供的静态网站免费托管服务。通过它，我们可以直接从自己的Github仓库读取并部署网站，而不需要购买额外的服务器资源。
+</p>
+<p>
+  &emsp;&emsp;在上文中我们已经通过“hexo clean && hexo g && hexo server --static”命令在本地服务器上运行了我们的博客站点。在这个过程中，本地服务器依赖于“./public”文件夹下的内容，生成了我们的个人博客页面。而利用Github Pages部署网站的过程就相当于将“./public”文件夹中的数据推送到我们的Github仓库中。这个操作可以通过“<strong>hexo d</strong>”命令实现。
+</p>
+<ol>
+  <li>
+    <p>创建一个用于博客发布的Github仓库，并开启Pages服务</p>
+    <p>
+      &emsp;&emsp;首先登录我们的Github账户，新建一个<strong>公开</strong>仓库。仓库的名字请按照这个格式设置“&lt;username&gt;.github.io”，如下图所示，以Github账户名为前缀，“.github.io”为后缀作为新仓库的名字。这样，我们博客的初始域名就是“&lt;username&gt;.github.io”，否则，博客的初始域名可能就是“&lt;username&gt;.github.io/仓库名”，后面多了一个仓库路径，而且hexo的config没有设置好的话连css文件都无法正常加载。
+    </p>
+    <img src="/blog/github_pages_name.png" title="仓库名设置" alt="图片加载失败" />
+    <p>
+      &emsp;&emsp;新仓库创建完成后进入Settings页面，查看Pages服务，当页面显示出“Your site is live at &lt;username&gt;.github.io”后，Pages服务就成功打开了。
+    </p>
+    <img src="/blog/github_pages_run.png" title="pages网址" alt="图片加载失败" />
+    <blockquote>
+      <font face="Lato" size=3>
+        <p>
+          （这里我已经配置了个人域名，所以直接显示了我的个人域名。如果没有配置个人域名的话，图中默认应该显示“Your site is live at fawninmyheart.github.io”，在浏览器中输入网址“fawninmyheart.github.io”即可直接访问我的博客。）
+        </p>
+      </font>
+    </blockquote>
+  </li>
+  <li>
+    <p>在Hexo中配置Deployment参数</p>
+    <p>
+      &emsp;&emsp;仓库创建完成后就需要打开Hexo的配置文件，在“Deployment”模块中配置Github仓库的参数。打开“_config.yml”文件，找到“deploy:”模块，将刚刚创建的仓库地址放到“repository: ”后面，“type”设置为“git”，“branch”设置为“main”。
+    </p>
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:fawninmyheart/fawninmyheart.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+  </li>
+  <li>
+    <p>上传“./public”文件夹中的内容上传到Github</p>
+    <p>&emsp;&emsp;完成Hexo的Deployment配置后，就可以使用“hexo d”命令将“./public”文件夹中的网站数据部署到刚刚新建的Github仓库中。</p>
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">(base) root:~/blog/myblog$ hexo d</span><br><span class="line">/usr/local/lib/node_modules/hexo-cli/bin</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend <span class="built_in">dirs</span>...</span><br><span class="line">[master 5b559ed] Site updated: 2024-07-25 17:16:48</span><br><span class="line">6 files changed, 36 insertions(+), 18 deletions(-)</span><br><span class="line">Enumerating objects: 19, <span class="keyword">done</span>.</span><br><span class="line">Counting objects: 100% (19/19), <span class="keyword">done</span>.</span><br><span class="line">Delta compression using up to 12 threads</span><br><span class="line">Compressing objects: 100% (9/9), <span class="keyword">done</span>.</span><br><span class="line">Writing objects: 100% (10/10), 2.18 KiB | 1.09 MiB/s, <span class="keyword">done</span>.</span><br><span class="line">Total 10 (delta 7), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Resolving deltas: 100% (7/7), completed with 7 <span class="built_in">local</span> objects.</span><br><span class="line">To github.com:fawninmyheart/fawninmyheart.github.io.git</span><br><span class="line">  e9a6ebe..5b559ed  HEAD -&gt; main</span><br><span class="line">branch <span class="string">&#x27;master&#x27;</span> <span class="built_in">set</span> up to track <span class="string">&#x27;git@github.com:fawninmyheart/fawninmyheart.github.io.git/main&#x27;</span>.</span><br><span class="line">INFO  Deploy <span class="keyword">done</span>: git</span><br></pre></td></tr></table></figure>
+    <p>&emsp;&emsp;完成部署后就可以打开Pages服务指向的网址查看我们的博客。期间可能会有一些延迟，可以等几分钟再试着查看。</p>
+  </li>
+</ol>
+
+<h4 id="方法二、Github-源代码托管-Cloudfare-Pages-部署"><a href="#方法二、Github-源代码托管-Cloudfare-Pages-部署" class="headerlink" title=" 方法二、Github 源代码托管 + Cloudfare Pages 部署 "></a><font face="Lato" size=4> 方法二、Github 源代码托管 + Cloudfare Pages 部署 </font></h4><hr>
+<h3 id="配置个人域名"><a href="#配置个人域名" class="headerlink" title=" 配置个人域名 "></a><font face="Lato" size=5> 配置个人域名 </font></h3><p>
+  <font face="Lato" size=4>
+    通过上文中的操作，我们已经可以直接通过“&lt;username&gt;.github.io”访问我们的博客了，但是默认的Github域名无法被收录进百度，也无法用来配置CDN服务。所以我们建议购买一个自己的域名，然后将这个域名解析到“&lt;username&gt;.github.io”上。
+  </font>
+  <blockquote>
+    <font face="Lato" size=3>
+      <i>因为我是用的Cloudflare来配置CDN的，期间需要修改域名的DNS解析服务器，但是我们无法修改Github域名的DNS服务器。当然我的了解有限，可能也存在直接配置Github域名的CDN服务的方法，以后如果看到再说。</i>
+    </font>
+  </blockquote>
+</p>
+
+<h4 id="域名购买和解析"><a href="#域名购买和解析" class="headerlink" title=" 域名购买和解析 "></a><font face="Lato" size=4> 域名购买和解析 </font></h4><font face="Lato" size=4>
+  <p>
+    &emsp;&emsp;以阿里云为例。购买域名后（需完成实名制），点击解析，添加两条记录。其中CNAME中记录了需要指向的域名（<i>&lt;username&gt;.github.io</i>），另一个解析记录则允许你使用“&lt;购买的域名&gt;”跳转到CNAME对应的域名（ip地址可以直接通过ping &lt;username&gt;.github.io获得）。
+  </p>
+  <p>
+    &emsp;&emsp;举个例子来说，以下图中的内容完成域名解析，则域名“<i>www.fawninmyheart.top</i>”（CNAME记录）可以直接指向“<i>fawninmyheart.github.io</i>”；而“<i>fawninmyheart.top</i>”则会先跳转到“<i>www.fawninmyheart.top</i>”（并返回返回码301），再进一步指向“<i>fawninmyheart.github.io</i>”。
+  </p>
+</font>
+<img src="/blog/CNAME_resolution.png" title="域名CNAME解析" alt="图片加载失败" style="zoom:27%; display: inline; margin-right: 2px;" />
+<img src="/blog/resolution.png" title="域名解析" alt="图片加载失败" style="zoom:27%; display: inline; margin-left: 2px;" />
+<blockquote>
+  <p>
+    <font face="Lato" size=3>
+      需要注意的是，其中CNAME记录的主机记录一定要设置为“www”，从而直接使用“www.<购买的域名>”指向Github。如果CNAME记录的主机记录设置为“@”，则表示使用“<购买的域名>”指向Github。这种情况下，域名无法被添加到百度资源搜索平台。即使在另一条解析记录中将主机记录设置为“www”，即令“www.<购买的域名>”跳转到“<购买的域名>”，也会因为“www.<购买的域名>”的返回码为301，导致该域名无法通过百度资源搜索平台最后的网页验证。
+    </font>
+  </p>
+</blockquote>
+
+<h4 id="在Hexo中配置个人域名"><a href="#在Hexo中配置个人域名" class="headerlink" title=" 在Hexo中配置个人域名 "></a><font face="Lato" size=4> 在Hexo中配置个人域名 </font></h4><font face="Lato" size="4">
+  <p>
+    &emsp;&emsp;进入我们之前建立的博客环境，找到“source”文件夹，在里面建立一个“CNAME”文件，没有任何后缀。然后将“www.&lt;购买的域名&gt;”写入这个文件中。最后通过“hexo clean && hexo g”命令，重新生成站点数据。成功生成后使用“hexo d”命令将站点数据推送到Github仓库即可。
+  </p>
+</font>
+<img src="/blog/CNAME.png" title="CNMAE" alt="图片加载失败" />
+
+<hr>
+<h3 id="Hexo加速"><a href="#Hexo加速" class="headerlink" title=" Hexo加速 "></a><font face="Lato" size=5> Hexo加速 </font></h3><p>由于国内对Github进行了DNS污染，限制了我们托管在Github Pages上的网页的加载速度，所以我们可以通过CDN服务加速我们的博客加载速度。</p>
+<h4 id="网页加载优化"><a href="#网页加载优化" class="headerlink" title=" 网页加载优化 "></a><font face="Lato" size=4> 网页加载优化 </font></h4><font face="Lato" size=4>
+  <p>
+    &emsp;&emsp;<a target="_blank" rel="noopener" href="https://www.cloudflare-cn.com/">Cloudflare</a>是一家向用户提供全球CDN节点以及DNS服务的公司。其在中国也有CDN服务器，并且还提供了个人学习用的免费套餐，可以满足个人博客的使用。（此方法需要已经为博客配置过个人域名）
+  <blockquote>
+    <font face="Lato" size="3">
+      CDN的全称是Content Delivery Network，即内容分发网络，是由代理服务器及其数据中心组成的地理分布式网络。CDN系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的是使用户可就近取得所需内容，解决Internet网络拥挤的状况，提高用户访问网站的响应速度。
+    </font>
+  </blockquote>
+  </p>
+</font>
+<font face="Lato" size=4>
+  <p>
+    &emsp;&emsp;之前我们已经给博客配置了个人域名。在此基础上，我们可以将个人域名所请求的博客站点资源缓存到Cloudflare的CDN服务器上。之后当我们通过个人域名加载博客站点时，CDN就会返回一个对我们来说网路最优的服务器，从而提高了站点加载速度。下面将介绍如何使用Cloudflare的CDN服务。
+    <blockquote>
+      <font face="Lato" size="3">
+        <i>注意: 本篇文章基于GitHub page，如果是依赖于国内服务器的网站的话，最好不要套 Cloudflare，可能会使得访问速度变得更慢。</i>
+      </font>
+    </blockquote>
+  </p>
+  <p>
+    &emsp;&emsp;首先需要在Cloudflare注册一个账户。
+  </p>
+</font>
+
+<h4 id="图片加载优化"><a href="#图片加载优化" class="headerlink" title=" 图片加载优化 "></a><font face="Lato" size=4> 图片加载优化 </font></h4><font face="Lato" size=4>
+  <p>
+    jsDelivr/Chinajsdelivr CDN加速图片
+  </p>
+</font>
+
+<hr>
+<h3 id="站点收录"><a href="#站点收录" class="headerlink" title=" 站点收录 "></a><font face="Lato" size=5> 站点收录 </font></h3><p>将个人博客收录到各个搜索平台中(百度、Bing、Google)</p>
+<h4 id="百度"><a href="#百度" class="headerlink" title=" 百度 "></a><font face="Lato" size=4> 百度 </font></h4><font face="Lato" size=4>
+  <p>
+    &emsp;&emsp;可以通过<a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/">百度资源搜索平台</a>将博客收录进百度。（使用github Pages服务发布的博客需要准备一个自己的域名用以跳转到自己博客，百度不能直接收录github站点）
+  </p>
+  <p>
+    &emsp;&emsp;打开百度资源搜索平台，登录并完成实名制。点击“用户中心”-“站点管理”，点击添加网站。输入“www.&lt;购买的域名>&gt;”；配置站点属性；选择第一个文件验证，将下载下来的源文件放到个人博客在github的根目录下，完成验证。
+  </p>
+</font>
+
+<h4 id="Bing"><a href="#Bing" class="headerlink" title=" Bing "></a><font face="Lato" size=4> Bing </font></h4><font face="Lato" size="4">
+  <p>
+    &emsp;&emsp;使用<a target="_blank" rel="noopener" href="https://www.bing.com/webmasters/home">Bing Webmaster Tools</a>将“<i>&lt;username&gt;.github.io</i>”添加到Bing中。点击添加网站；输入<i>&lt;username&gt;.github.io</i>到手动添加网站中；下载验证文件并放入github博客根目录中，完成验证。
+  </p>
+</font>
+
+<h4 id="Google"><a href="#Google" class="headerlink" title=" Google "></a><font face="Lato" size=4> Google </font></h4><hr>
+<h3 id="bug修复"><a href="#bug修复" class="headerlink" title=" bug修复 "></a><font face="Lato" size=5> bug修复 </font></h3><font face="Lato" size="3">
+  <ol>
+    <li>
+      执行“npm install hexo-renderer-marked --save”时，进度卡在“npm install hexo-renderer-marked --save”。可以通过更改镜像地址修复：
+      <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 使用新的镜像地址</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>
+    </li>
+  </ol>
+</font>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/blog/" rel="tag"># blog</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Makedown/" rel="prev" title="Markdown">
+      <i class="fa fa-chevron-left"></i> Markdown
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/conda/" rel="next" title="Conda环境的使用">
+      Conda环境的使用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text"> Hexo安装 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0linux%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text"> 本地linux配置 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">1.1.1.</span> <span class="nav-text"> 安装依赖 </span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hexo%E5%AE%89%E8%A3%85-1"><span class="nav-number">1.1.2.</span> <span class="nav-text"> Hexo安装 </span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text"> 博客配置 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.1.</span> <span class="nav-text"> 初始化博客 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E6%A0%8F%E5%9B%BE%E6%A0%87"><span class="nav-number">2.2.</span> <span class="nav-text"> 菜单栏图标 </span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2"><span class="nav-number">3.</span> <span class="nav-text"> 发布博客 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E9%83%A8%E7%BD%B2"><span class="nav-number">4.</span> <span class="nav-text"> Hexo部署 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%E3%80%81Github-Pages-%E9%83%A8%E7%BD%B2"><span class="nav-number">4.1.</span> <span class="nav-text"> 方法一、Github Pages 部署 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%E3%80%81Github-%E6%BA%90%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1-Cloudfare-Pages-%E9%83%A8%E7%BD%B2"><span class="nav-number">4.2.</span> <span class="nav-text"> 方法二、Github 源代码托管 + Cloudfare Pages 部署 </span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text"> 配置个人域名 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B0%E5%92%8C%E8%A7%A3%E6%9E%90"><span class="nav-number">5.1.</span> <span class="nav-text"> 域名购买和解析 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8Hexo%E4%B8%AD%E9%85%8D%E7%BD%AE%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D"><span class="nav-number">5.2.</span> <span class="nav-text"> 在Hexo中配置个人域名 </span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E5%8A%A0%E9%80%9F"><span class="nav-number">6.</span> <span class="nav-text"> Hexo加速 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%8A%A0%E8%BD%BD%E4%BC%98%E5%8C%96"><span class="nav-number">6.1.</span> <span class="nav-text"> 网页加载优化 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E4%BC%98%E5%8C%96"><span class="nav-number">6.2.</span> <span class="nav-text"> 图片加载优化 </span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%99%E7%82%B9%E6%94%B6%E5%BD%95"><span class="nav-number">7.</span> <span class="nav-text"> 站点收录 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%99%BE%E5%BA%A6"><span class="nav-number">7.1.</span> <span class="nav-text"> 百度 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bing"><span class="nav-number">7.2.</span> <span class="nav-text"> Bing </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Google"><span class="nav-number">7.3.</span> <span class="nav-text"> Google </span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bug%E4%BF%AE%E5%A4%8D"><span class="nav-number">8.</span> <span class="nav-text"> bug修复 </span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Shen Hua"
+      src="/images/xiaohu.jpg">
+  <p class="site-author-name" itemprop="name">Shen Hua</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shen Hua</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
