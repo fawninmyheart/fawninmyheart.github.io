@@ -1,3 +1,6 @@
+// Author: Shen Hua
+// date: 2024-08-16
+
 // 自定义构造函数，显示一个附带超链接的图片。其中默认显示小图，点击后显示原图。原图路径相比于小图路径缺少一个“_small”后缀。同时提供自动挑选可以使用的cdn服务器
 class ImgATag extends HTMLElement {
     constructor() {

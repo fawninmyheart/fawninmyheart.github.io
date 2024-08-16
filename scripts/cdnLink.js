@@ -1,3 +1,5 @@
+// Author: Shen Hua
+
 var cdnUrls = [
     'https://jsd.cdn.zzko.cn/gh/fawninmyheart/blog_img',
     'https://jsd.onmicrosoft.cn/gh/fawninmyheart/blog_img'
