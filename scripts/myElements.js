@@ -8,6 +8,7 @@ class ImgATag extends HTMLElement {
         // cdn服务器列表
         var cdnUrls = [
             'https://jsd.cdn.zzko.cn/gh/fawninmyheart/blog_img',
+            // 'https://jsd.onmicrosoft.cn/gh/fawninmyheart/blog_img',
             'https://jsd.onmicrosoft.cn/gh/fawninmyheart/blog_img'
         ]
         // 创建img和anchor元素
@@ -15,9 +16,16 @@ class ImgATag extends HTMLElement {
         const img = document.createElement('img');
         // 设置img元素属性
         img.src = cdnUrls[0] + this.getAttribute('src');
-        img.title = this.getAttribute('title') || "图片"
-        img.alt = this.getAttribute('alt') || "图片加载失败"
-        img.style = this.getAttribute('style') || "zoom:100%;"
+        img.title = this.getAttribute('title') || "图片";
+        img.alt = this.getAttribute('alt') || "图片加载失败";
+        // img.style = this.getAttribute('style') || "zoom:100%;";
+        img.onload = () => {
+            if (img.naturalWidth >= img.naturalHeight) {
+                img.width = 800;
+            } else if (img.naturalWidth < img.naturalHeight) {
+                img.width = 500;
+            }
+        }
         // img.onerror = cdnBackup;
         img.onerror = () => {
             // 这里可以添加更多的备用图片路径
