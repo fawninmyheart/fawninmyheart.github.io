@@ -1,205 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <url>
-    <loc>https://www.fawninmyheart.top/LinuxCrontab/</loc>
-    
-    <lastmod>2024-09-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://www.fawninmyheart.top/index.html</loc>
+    <lastmod>2024-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
   </url>
-  
   <url>
-    <loc>https://www.fawninmyheart.top/samtoolsInstall/</loc>
-    
-    <lastmod>2024-09-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/essay/index.html</loc>
-    
-    <lastmod>2024-09-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/about/index.html</loc>
-    
-    <lastmod>2024-08-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/MobileNetsV1/index.html</loc>
-    
-    <lastmod>2024-08-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/blog/</loc>
-    
-    <lastmod>2024-08-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/IGV-visual-linux/</loc>
-    
-    <lastmod>2024-08-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/travel/index.html</loc>
-    
-    <lastmod>2024-08-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/conda/</loc>
-    
-    <lastmod>2024-08-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/sketch/index.html</loc>
-    
-    <lastmod>2024-08-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/Markdown/</loc>
-    
-    <lastmod>2024-08-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-
-  <url>
-    <loc>https://www.fawninmyheart.top/</loc>
-    <lastmod>2024-09-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/tags/Linux/</loc>
+    <loc>https://www.fawninmyheart.top/LinuxCrontab/index.html</loc>
     <lastmod>2024-09-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
+    <priority>1</priority>
   </url>
-  
   <url>
-    <loc>https://www.fawninmyheart.top/tags/IGV/</loc>
-    <lastmod>2024-09-06</lastmod>
+    <loc>https://www.fawninmyheart.top/samtoolsInstall/index.html</loc>
+    <lastmod>2024-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
+    <priority>1</priority>
   </url>
-  
   <url>
-    <loc>https://www.fawninmyheart.top/tags/Singularity/</loc>
-    <lastmod>2024-09-06</lastmod>
+    <loc>https://www.fawninmyheart.top/blog/index.html</loc>
+    <lastmod>2024-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
+    <priority>1</priority>
   </url>
-  
   <url>
-    <loc>https://www.fawninmyheart.top/tags/Genome-Visualization/</loc>
-    <lastmod>2024-09-06</lastmod>
+    <loc>https://www.fawninmyheart.top/IGV-visual-linux/index.html</loc>
+    <lastmod>2024-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
+    <priority>1</priority>
   </url>
-  
   <url>
-    <loc>https://www.fawninmyheart.top/tags/Markdown/</loc>
-    <lastmod>2024-09-06</lastmod>
+    <loc>https://www.fawninmyheart.top/conda/index.html</loc>
+    <lastmod>2024-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
+    <priority>1</priority>
   </url>
-  
   <url>
-    <loc>https://www.fawninmyheart.top/tags/Conda/</loc>
-    <lastmod>2024-09-06</lastmod>
+    <loc>https://www.fawninmyheart.top/Markdown/index.html</loc>
+    <lastmod>2024-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
+    <priority>1</priority>
   </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/tags/samtools/</loc>
-    <lastmod>2024-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/tags/Blog/</loc>
-    <lastmod>2024-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/tags/Hexo/</loc>
-    <lastmod>2024-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/tags/Node-js/</loc>
-    <lastmod>2024-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/tags/Github-Pages/</loc>
-    <lastmod>2024-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/tags/CDN/</loc>
-    <lastmod>2024-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fawninmyheart.top/tags/Giscus/</loc>
-    <lastmod>2024-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-
-  
 </urlset>
