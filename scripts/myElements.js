@@ -7,6 +7,7 @@ class ImgATag extends HTMLElement {
         super();
         // cdn服务器列表
         var cdnUrls = [
+            'http://139.196.185.149:8082',
             'https://jsd.cdn.zzko.cn/gh/fawninmyheart/blog_img',
             // 'https://jsd.onmicrosoft.cn/gh/fawninmyheart/blog_img',
             'https://jsd.onmicrosoft.cn/gh/fawninmyheart/blog_img'
