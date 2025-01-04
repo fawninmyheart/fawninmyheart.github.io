@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/me.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.fawninmyheart.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="&emsp;&emsp;Singularity是一种容器技术，特别适用于高性能计算（HPC）环境，能够在不需要root权限的情况下部署和分析管道，同时提供较高的安全性和较低的学习成本‌。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Singularity的安装和使用">
+<meta property="og:url" content="https://www.fawninmyheart.top/InstallSingularity/index.html">
+<meta property="og:site_name" content="You are my sunshine&lt;br&gt;being with you is like walking on a clear morning">
+<meta property="og:description" content="&emsp;&emsp;Singularity是一种容器技术，特别适用于高性能计算（HPC）环境，能够在不需要root权限的情况下部署和分析管道，同时提供较高的安全性和较低的学习成本‌。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-01-04T13:12:27.000Z">
+<meta property="article:modified_time" content="2025-01-04T13:15:25.398Z">
+<meta property="article:author" content="Shen Hua">
+<meta property="article:tag" content="Singularity">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.fawninmyheart.top/InstallSingularity/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Singularity的安装和使用</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="You are my sunshine<br>being with you is like walking on a clear morning" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <me class="site-title">You are my sunshine<br>being with you is like walking on a clear morning</me>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-sketch">
+
+    <a href="/sketch/" rel="section"><i class="fa fa-pen fa-fw"></i>素描</a>
+
+  </li>
+        <li class="menu-item menu-item-travel">
+
+    <a href="/travel/" rel="section"><i class="fa fa-mountain fa-fw"></i>旅行</a>
+
+  </li>
+        <li class="menu-item menu-item-essay">
+
+    <a href="/essay/" rel="section"><i class="fa fa-comment fa-fw"></i>杂记</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.fawninmyheart.top/InstallSingularity/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/xiaohu.jpg">
+      <meta itemprop="name" content="Shen Hua">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="You are my sunshine<br>being with you is like walking on a clear morning">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Singularity的安装和使用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-01-04 21:12:27 / 修改时间：21:15:25" itemprop="dateCreated datePublished" datetime="2025-01-04T21:12:27+08:00">2025-01-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>&emsp;&emsp;<a target="_blank" rel="noopener" href="https://cloud.sylabs.io/">Singularity</a>是一种容器技术，特别适用于高性能计算（HPC）环境，能够在不需要root权限的情况下部署和分析管道，同时提供较高的安全性和较低的学习成本‌。</p>
+<span id="more"></span>
+
+<p><font font="Lato" size = 4><strong>基本概念和特点</strong></font></p>
+<ol>
+    <li>
+        <font font="Lato" size=4>容器：</font>
+        <p>
+            <font font="Lato" size="3">
+                在Singularity中，容器是一个包含用户软件和依赖的镜像系统，可以独立运行一条或多条命令。
+            </font>
+        </p>
+    </li>
+    <li>
+        <font font="Lato" size=4>SIF：</font>
+        <p>
+            <font font="Lato" size="3">
+                静态Singularity容器，是压缩后的只读Singularity容器文件，也是生产环境下的主要使用形式。
+            </font>
+        </p>
+    </li>
+    <li>
+        <font font="Lato" size=4>Sandbox‌：</font>
+        <p>
+            <font font="Lato" size="3">
+                Singularity沙盒容器，是Singularity容器的可写文件。其表现形式是一个目录，常在创建和修改容器内容时使用，是开发阶段的主要使用形式。
+            </font>
+        </p>
+    </li>
+</ol>
+
+<h2 id="安装Singularity"><a href="#安装Singularity" class="headerlink" title="安装Singularity"></a><font font="Lato" size = 5>安装Singularity</font></h2><p>
+    <p>
+        <font font="Lato" size="4">
+            Singularity的运行依赖于Go语言，因此在安装Singularity之前，需要先安装Go语言。另外，最好准备好root权限。
+            <blockquote>
+                <font font="Lato" size="3">
+                    安装Go语言的方法可以参考<a target="_blank" rel="noopener" href="https://golang.org/doc/install">Go语言官方文档</a>。
+                </font>
+            </blockquote>
+        </font>
+    </p>
+    <p>
+        <font font="Lato" size="4">
+            首先，新建并进入一个空目录，用来存放安装时下载的文件。然后可以使用以下命令安装Singularity：
+        </font>
+        <ol>
+            <li>
+                <font font="Lato" size=4>Ubuntu：</font>
+                <font font="Lato" size=3>
+                    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装扩展工具和依赖</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y build-essential libssl-dev uuid-dev libgpgme11-dev squashfs-tools libseccomp-dev wget pkg-config git cryptsetup debootstrap</span><br><span class="line">            </span><br><span class="line"><span class="comment"># 安装Go语言</span></span><br><span class="line">wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz</span><br><span class="line"><span class="built_in">sudo</span> tar --directory=/usr/local -xzvf go1.13.linux-amd64.tar.gz</span><br><span class="line"><span class="built_in">export</span> PATH=/usr/local/go/bin:<span class="variable">$PATH</span></span><br><span class="line">            </span><br><span class="line"><span class="comment"># 下载singularity源码</span></span><br><span class="line">wget https://github.com/singularityware/singularity/releases/download/v3.5.3/singularity-3.5.3.tar.gz</span><br><span class="line">tar -xzvf singularity-3.5.3.tar.gz</span><br><span class="line">            </span><br><span class="line"><span class="comment"># 安装Singularity</span></span><br><span class="line"><span class="built_in">cd</span> singularity</span><br><span class="line">./mconfig</span><br><span class="line"><span class="built_in">cd</span> builddir</span><br><span class="line">make</span><br><span class="line"><span class="built_in">sudo</span> make install</span><br></pre></td></tr></table></figure>
+                </font>
+            </li>
+            <li>
+                <font font="Lato" size=4>CentOS（代码未测试过，请一步步尝试）：</font>
+                <font font="Lato" size=3>
+                    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">yum install -y gcc libuuid-devel squashfs-tools openssl-devel make</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装go</span></span><br><span class="line"><span class="built_in">export</span> VERSION=1.17.2 OS=linux ARCH=amd64   </span><br><span class="line">wget https://dl.google.com/go/go<span class="variable">$VERSION</span>.<span class="variable">$OS</span>-<span class="variable">$ARCH</span>.tar.gz </span><br><span class="line">tar -C /usr/local -xzvf go<span class="variable">$VERSION</span>.<span class="variable">$OS</span>-<span class="variable">$ARCH</span>.tar.gz</span><br><span class="line"><span class="built_in">rm</span> -f go<span class="variable">$VERSION</span>.<span class="variable">$OS</span>-<span class="variable">$ARCH</span>.tar.gz </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export PATH=/usr/local/go/bin:$PATH&#x27;</span> &gt;&gt; /etc/profile</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装singularity</span></span><br><span class="line"><span class="built_in">export</span> VERSION=3.9.2</span><br><span class="line">wget https://github.com/sylabs/singularity/releases/download/v<span class="variable">$&#123;VERSION&#125;</span>/singularity-ce-<span class="variable">$&#123;VERSION&#125;</span>.tar.gz </span><br><span class="line">tar -xzf singularity-ce-<span class="variable">$&#123;VERSION&#125;</span>.tar.gz</span><br><span class="line"><span class="built_in">cd</span> singularity-ce-<span class="variable">$&#123;VERSION&#125;</span></span><br><span class="line">./mconfig --prefix=/opt/singularity/<span class="variable">$&#123;VERSION&#125;</span></span><br><span class="line"><span class="built_in">cd</span> builddir/</span><br><span class="line">make &amp;&amp; make install</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;export PATH=/opt/singularity/<span class="variable">$&#123;VERSION&#125;</span>/bin:\$PATH&quot;</span> &gt;&gt; /etc/profile</span><br></pre></td></tr></table></figure>
+                </font>
+            </li>
+        </ol>
+    </p>
+</p>
+
+<h2 id="如何使用Singularity"><a href="#如何使用Singularity" class="headerlink" title="如何使用Singularity"></a><font font="Lato" size = 5>如何使用Singularity</font></h2><p>
+    <p>
+        <font font="Lato" size="4">
+            Singularity最基础的使用方法就是创建一个自己需要的容器，其中包含了想要运行的软件极其相关依赖。建议在root权限下操作。
+        </font>
+        <ol>
+            <li>
+                <font font="Lato" size=4>基础容器：</font>
+                <font font="Lato" size=3>
+                    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载一个基础系统容器</span></span><br><span class="line">singularity pull library://library/default/ubuntu</span><br></pre></td></tr></table></figure>
+                </font>
+            </li>
+            <li>
+                <font font="Lato" size=4>生成沙盒容器：</font>
+                <font font="Lato" size=3>
+                    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个沙盒容器</span></span><br><span class="line">singularity build --sandbox &lt;software_name&gt;/ ubuntu_latest.sif</span><br></pre></td></tr></table></figure>
+                </font>
+            </li>
+            <li>
+                <font font="Lato" size=4>进入沙盒安装需要的软件：</font>
+                <font font="Lato" size=3>
+                    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入沙盒</span></span><br><span class="line">singularity shell --writable &lt;software_name&gt;/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在Singularity中使用shell参数会进入一个基于沙盒容器的shell环境，</span></span><br><span class="line"><span class="comment"># 接下来就可以像在linux系统中安装软件一样安装我们需要的软件和依赖。</span></span><br><span class="line"><span class="comment"># 安装完成后可以使用exit;退出沙盒。</span></span><br></pre></td></tr></table></figure>
+                </font>
+            </li>
+            <li>
+                <font font="Lato" size=4>将沙盒打包为静态SIF文件：</font>
+                <font font="Lato" size=3>
+                    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包沙盒为静态SIF文件</span></span><br><span class="line">singularity build &lt;software_name&gt;.sif &lt;software_name&gt;/</span><br></pre></td></tr></table></figure>
+                </font>
+            </li>
+            <li>
+                <font font="Lato" size=4>使用静态SIF文件运行软件（最基础）：</font>
+                <font font="Lato" size=3>
+                    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用Singularity运行软件</span></span><br><span class="line">singularity <span class="built_in">exec</span> &lt;software_name&gt;.sif &lt;software_cmd&gt;</span><br></pre></td></tr></table></figure>
+                </font>
+            </li>
+        </ol>
+    </p>
+</p>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Singularity/" rel="tag"># Singularity</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/LinuxCrontab/" rel="prev" title="Linux计划任务">
+      <i class="fa fa-chevron-left"></i> Linux计划任务
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Singularity"><span class="nav-number">1.</span> <span class="nav-text">安装Singularity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Singularity"><span class="nav-number">2.</span> <span class="nav-text">如何使用Singularity</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Shen Hua"
+      src="/images/xiaohu.jpg">
+  <p class="site-author-name" itemprop="name">Shen Hua</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fawninmyheart" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fawninmyheart" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:shenhua0326@qq.com" title="E-Mail → mailto:shenhua0326@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ziyuan.baidu.com/" title="百度站长 → https:&#x2F;&#x2F;ziyuan.baidu.com&#x2F;" rel="noopener" target="_blank"><i class=" fa-fw"></i>百度站长</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.bing.com/webmasters/home" title="Bing站长 → https:&#x2F;&#x2F;www.bing.com&#x2F;webmasters&#x2F;home" rel="noopener" target="_blank"><i class=" fa-fw"></i>Bing站长</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://search.google.com/search-console/about" title="Google站长 → https:&#x2F;&#x2F;search.google.com&#x2F;search-console&#x2F;about" rel="noopener" target="_blank"><i class=" fa-fw"></i>Google站长</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://home.console.aliyun.com/home/dashboard/ProductAndService" title="阿里云控制台 → https:&#x2F;&#x2F;home.console.aliyun.com&#x2F;home&#x2F;dashboard&#x2F;ProductAndService" rel="noopener" target="_blank"><i class=" fa-fw"></i>阿里云控制台</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shen Hua</span>
+</div>
+
+<div class="beian">
+  <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn">沪ICP备2024094879号-1</a>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
