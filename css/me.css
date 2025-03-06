@@ -41,3 +41,27 @@ me {
   direction: rtl;
   font-family: UKIJ Ekran;
 }
+
+.collapsible-container {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.collapsible-header {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-bottom: -1px;
+}
+
+.collapsible-content {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  height: 0;
+}
+
+.collapsible-container.expanded .collapsible-content {
+  height: 100px; /* 设置展开时的高度 */
+}
