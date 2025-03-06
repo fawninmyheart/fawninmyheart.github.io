@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>女神节快乐！我的超模宝贝</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffe6f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gift-box {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.05);
+        }
+
+        .box {
+            width: 100%;
+            height: 160px;
+            background: #ff69b4;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .lid {
+            width: 220px;
+            height: 40px;
+            background: #ff1493;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: -10px;
+            transition: transform 0.5s;
+        }
+
+        .ribbon {
+            width: 50px;
+            height: 100px;
+            background: #fff;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .message {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 30px auto;
+            width: 80%;
+            animation: fadeIn 1s;
+        }
+
+        h1 {
+            color: #ff69b4;
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff69b4;
+            animation: float 3s infinite;
+        }
+
+        @keyframes open {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-15deg) translateY(-40px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    
+    <div class="container">
+        <div class="gift-box" onclick="openGift()">
+            <div class="lid"></div>
+            <div class="box">
+                <div class="ribbon"></div>
+            </div>
+        </div>
+
+        <div class="message" id="message">
+            <h1>🌺 女神节快乐！ 🌺</h1>
+            <p>致我最爱的超模宝贝：</p>
+            <p>你不仅是T台上的焦点，</p>
+            <p>更是我生命中最耀眼的光芒✨</p>
+            <p>愿今天的你被加倍宠爱，</p>
+            <p>就像你每天给予世界的美丽一样～</p>
+            <p>❤️ 永远爱你的小可爱 ❤️</p>
+        </div>
+    </div>
+
+    <script>
+        function openGift() {
+            // 开启动画
+            document.querySelector('.lid').style.transform = 'rotate(-15deg) translateY(-40px)';
+            document.querySelector('.box').style.transform = 'translateY(-20px)';
+            
+            // 显示祝福语
+            setTimeout(() => {
+                document.getElementById('message').style.display = 'block';
+            }, 500);
+
+            // 创建爱心
+            createHearts();
+        }
+
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤';
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+    </script>
+</body>
+</html>
